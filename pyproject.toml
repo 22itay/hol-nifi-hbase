@@ -1,0 +1,54 @@
+[project]
+name = "hol-gre"
+dynamic = ["version"]
+description = "Hands on Lab for Cloudera NiFi and Hbase training"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "Apache-2.0"
+keywords = []
+authors = [
+  { name = "Steve Matison", email = "steven.matison@cloudera.com" },
+  { name = "Jim Enright", email = "jenright@cloudera.com" },
+  { name = "Webster Mudge", email = "wmudge@cloudera.com" },
+]
+classifiers = []
+dependencies = []
+
+[tool.hatch.version]
+path = "VERSION.txt"
+
+[tool.hatch.envs.default]
+python = "3.12"
+detached = true
+dependencies = [
+  "unidecode",
+  "pre-commit",
+  "ansible-core<2.17", # For RHEL 8 support
+  "ansible-navigator",
+  "cloudera-assist",
+]
+
+[tool.hatch.envs.default.scripts]
+lint = "pre-commit run -a"
+
+[tool.hatch.envs.mkdocs]
+python = "3.12"
+detached = true
+dependencies = [
+  "mkdocs>=1.3.0",
+  "mkdocs-material>=8.2.16",
+  "mkdocs-markdownextradata-plugin>=0.2.5",
+  "mkdocs-with-pdf>=0.9.3",
+  "mkdocs-glightbox>=0.2.1",
+  "mkdocs-same-dir",
+  "mkdocs-include-markdown-plugin",
+  "mkdocs-macros-plugin",
+]
+
+[tool.hatch.envs.mkdocs.scripts]
+serve = "cd instructor/mkdocs; mkdocs serve"
+deploy = "cd instructor/mkdocs; mkdocs gh-deploy -r origin --no-history"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
