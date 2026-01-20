@@ -1,0 +1,19 @@
+clusterConfigs:
+  clusters:
+    - clusterName: mud-kafka
+      tags:
+        - itay
+        - 'test1'
+      bootstrapServers: 172.20.213.248:9092
+      adminOperationTimeout: PT1M
+      authorization:
+        enabled: false
+      commonClientConfig:
+        security.protocol: PLAINTEXT
+surveyorConfig:
+  surveyor:
+    authentication:
+      enabled: false
+tlsConfigs:
+  enabled: false
+
