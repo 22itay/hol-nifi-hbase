@@ -89,7 +89,7 @@ for i in range(1, 50001):
     row = (datetime.now(), random.choice(sensors), random.uniform(20, 90), random.choice(errors))
     data_to_insert.append(row) 
     if i % batch_size == 0:
-        cursor.executemany("UPSERT INTO SENSORS_USERN.SENSOR_DATA_NAIVE_USERN VALUES (?, ?, ?, ?)", data_to_insert)
+        cursor.executemany("UPSERT INTO SENSORS_<userxxx>.SENSOR_DATA_NAIVE_<userxxx> VALUES (?, ?, ?, ?)", data_to_insert)
         data_to_insert = []
         if i % 1000 == 0: print(f"  Progress: {i}/50000...")
 ```
