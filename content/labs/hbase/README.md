@@ -33,7 +33,7 @@ The goal of this workshop is to have fun!!!
 
     ***
 
-    [:octicons-arrow-right-24: Go to Lab 0 Guide](../labs/lab0/README.md)
+    [:octicons-arrow-right-24: Go to Lab 0 Guide](../lab0/README.md)
 
 * :simple-cloudera:{ .lg .middle } &nbsp; **Lab 1. Loading data to HBase**
 
